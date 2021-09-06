@@ -8,6 +8,7 @@
 | encrypted_password | string | null: false              |
 | first_name         | string | null: false              |
 | last_name          | string | null: false              |
+| first_name_kana     | string | null: false              |
 | last_name_kana     | string | null: false              |
 | birthday           | date   | null: false              |
 ### Association
@@ -19,7 +20,6 @@
 ## items テーブル
 | Column              | Type      | Options     |
 | ------------------  | ----------| ----------- |
-| image               |           |             |
 | name                | string    | null: false |
 | description         | text      | null: false |
 | category_id         | integer   | null: false |
@@ -38,8 +38,8 @@
 ## buys テーブル
 | Column             | Type      | Options     |
 | ------------------ | ----------| ----------- |
-| user               | references|             |
-| item               | references|             |
+| user               | references| null: false,foreign_key:true |
+| item               | references| null: false,foreign_key:true |
 ### Association
 - belongs_to :user
 - belongs_to :item
@@ -56,7 +56,7 @@
 | address            | string    | null: false |
 | building           | string    |             |
 | phone_number       | string    | null: false |
-| buy                | references|             |
+| buy                | references| null: false,foreign_key:true |
 ### Association
 - belongs_to :buys
 
