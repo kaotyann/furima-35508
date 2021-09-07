@@ -58,8 +58,7 @@
 | phone_number       | string    | null: false |
 | buy                | references| null: false,foreign_key:true |
 ### Association
-- belongs_to :buys
-
+- belongs_to :buy
 
 
 
